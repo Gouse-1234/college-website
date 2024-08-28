@@ -1,0 +1,114 @@
+/* Add your CSS styles here */
+#container {
+    padding: 20px;
+    border: 1px solid #0f0e0e;
+    width: 80%; /* Set width */
+    margin: 0 auto; /* Center the container */
+    cursor: pointer; /* Cursor animation */
+    transition: all 0.3s ease;
+}
+#container:hover {
+    box-shadow: 0 0 20px red; /* Example shadow effect on hover */
+
+  }
+#container label {
+    font-weight: bold;
+}
+
+#container select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+
+#container h2 {
+    margin-top: 20px;
+}
+
+#container #syllabus {
+    background-color: #f5f5f5;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+body{
+    background-image: url("https://raw.githubusercontent.com/sefyudem/Responsive-Login-Form/82b8d8efd3b0ac6382b9d0d71a99c6cf9dcefa23/img/bg.svg");
+    background-size: flex;
+    background-repeat: no-repeat;
+}
+.neon-button {
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
+    padding: 10px 20px;
+    margin: 10px;
+    text-decoration: none;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    background-color: #0F0;
+    color: #FFF;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .neon-button:hover {
+    background-color: #FFF;
+    color: #0F0;
+    border-color: blue;
+  }
+  
+  .neon-button button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .neon-button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background-color: none;
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: all 0.5s ease;
+    z-index: 0;
+  }
+  
+  .neon-button:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  /* Animation for course select */
+@keyframes colorchange {
+    0% { color: green; }
+    50% { color: blue; }
+    100% { color:darkmagenta; }
+  }
+  
+  /* Apply animation to course select */
+  #course {
+    animation: colorchange 3s infinite;
+  }
+  #subject {
+    animation: colorchange 3s infinite;
+  }
+
+  /* Style for select dropdown */
+  select {
+    width: 50%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid green;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  /* Hover effect for select dropdown */
+  select:hover {
+    border-color: darkmagenta;
+  }
+  

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timetable Performance</title>
+    <link rel="stylesheet" href="studentlogin.css">
+</head>
+<body>
+    <h1>Student Performance</h1>
+    <br>
+    <br>
+    <div id="container">
+        <label for="course">Select Course:</label>
+        <select id="course" onchange="populateSubjects()">
+            <option value="Select The Course">Select The Course</option>
+            <option value="computer_science">Computer Science</option>
+           
+        </select>
+
+        <br><br>
+
+        <label for="subject">Select Subject:</label>
+        <select id="subject" onchange="displaySyllabus()">
+            <!-- Options will be populated dynamically based on the selected course -->
+        </select>
+
+        <br><br>
+
+        <h2>Syllabus</h2>
+        <div id="syllabus">
+            <!-- Syllabus details will be displayed here based on the selected subject -->
+        </div>
+        <h2>Timetable</h2>
+        <div id="timetable">
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Day</th>
+                        <td>9:00-10:00</td>
+                        <td>10:00-11:00</td>
+                        <td>11:00-11:15</td>
+                        <td>11:15-12:15</td>
+                        <td>12:15-1:00</td>
+                        <td>1:00-2:00</td>
+                        <td>2:00-3:00</td>
+
+                       
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        
+                        <td>Monday</td>
+                        
+                        <td>Algorithms</td>
+                        <td>Database Management systems</td>
+                        <td>Free</td>
+                        <td>Data Structures</td>
+                        <td>Lunch</td>
+                        <td>Lab Session</td>
+                        <td>Lab Session</td>
+                    </tr>
+                    <tr>
+                      
+                        <td>Tuesday</td>
+                        <td>Database Management Systems</td>
+
+                        <td>Algorithms</td>
+                        <td>Free</td>
+                        <td>introductionto cs</td>
+                        <td>Lunch</td>
+                       
+                        <td>Lab Session</td>
+                        <td>Lab Session</td>
+
+                    </tr>
+                    <tr>
+                      <td>Wednesday</td>
+                        <td>Data Structures</td>
+                        <td>Algorithms</td>
+                        <td>Free</td>
+                        <td>introductionto cs</td>
+                        <td>Lunch</td>
+                        <td>Lab Session</td>
+                        <td>Lab Session</td>
+                        
+
+                    </tr>
+                    <!-- Add rows for other time slots if needed -->
+                </tbody>
+            </table> 
+            
+        <a href="home.html" class="neon-button"><button type="button">Back to Home</button></a>
+
+    </div>
+
+    <script>
+        // Course options
+        const courseSubjects = {
+            computer_science: ["Select The Subject", "Introduction to Computer Science", "Data Structures and Algorithms", "Database Management Systems"],
+            engineering: ["Select The Subject", "Engineering Mathematics", "Mechanics", "Thermodynamics"],
+            business: ["Select The Subject", "Principles of Marketing", "Financial Accounting", "Business Ethics"]
+        };
+
+        // Syllabus content for each subject
+        const syllabusContent = {
+            "Introduction to Computer Science": "This course covers the fundamentals of computer science including introduction to computers, programming basics, algorithms and problem solving, programming languages, software engineering principles, and computer hardware.",
+            "Data Structures and Algorithms": "This course covers various data structures and algorithms used in computer science, including arrays, linked lists, stacks, queues, trees, sorting algorithms, and searching algorithms.",
+            "Database Management Systems": "This course covers the concepts and principles of database management systems, including data modeling, database design, SQL queries, normalization, and database administration.",
+            "Engineering Mathematics": "This course covers mathematical concepts and techniques relevant to engineering, including calculus, linear algebra, differential equations, and probability theory.",
+            "Mechanics": "This course covers the principles of mechanics, including statics, dynamics, kinematics, and kinetics, as applied to engineering problems.",
+            "Thermodynamics": "This course covers the principles of thermodynamics, including laws of thermodynamics, thermodynamic processes, heat transfer, and thermodynamic cycles.",
+            "Principles of Marketing": "This course covers the fundamental principles and concepts of marketing, including market research, consumer behavior, marketing strategies, and marketing mix.",
+            "Financial Accounting": "This course covers the fundamentals of financial accounting, including preparation and analysis of financial statements, accounting principles, and accounting standards.",
+            "Business Ethics": "This course covers ethical principles and moral values in business, including ethical decision-making, corporate social responsibility, and ethical issues in various business contexts."
+        };
+
+        // Populate subjects based on the selected course
+        function populateSubjects() {
+            const selectedCourse = document.getElementById("course").value;
+            const subjectDropdown = document.getElementById("subject");
+            subjectDropdown.innerHTML = ""; // Clear previous options
+
+            // Add options based on the selected course
+            courseSubjects[selectedCourse].forEach(subject => {
+                const option = document.createElement("option");
+                option.text = subject;
+                option.value = subject; // No need to modify the value
+                subjectDropdown.add(option);
+            });
+        }
+
+        // Display syllabus for the selected subject
+        function displaySyllabus() {
+            const selectedSubject = document.getElementById("subject").value;
+            const syllabusDiv = document.getElementById("syllabus");
+            syllabusDiv.innerHTML = syllabusContent[selectedSubject];
+        }
+        
+    </script>
+</body>
+</html>
